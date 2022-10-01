@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lambda</title>
+    {% load static %}
+<!--    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">-->
+</head>
+
+<body>
+<div id="logo">
+                <h1><a href="{%url 'index'%}">λ</a></h1>
+                <span>by PythonMasterDELUXE-Edition</span>
+                <form id="test" action="" method="get">
+                    <input type="text" name="title">
+                </form>
+            </div>
+<br>
+    <a href="{%url 'create' %}"><input type="button" value="Add new item"></a>
+    <div align="right">
+    <p>{{user.username}}</p>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+    <br>
+
+    {% for item in items %}
+    <a href="{%url 'details' item.id%}">{{item}}</a>
+    <div style="line-height:100%;">
+    <br>
+    </div>
+<!--    тэг БР перекидывает на нижнюю строчку-->
+    {% endfor %}
+
+
+
+
+</body>
+</html>

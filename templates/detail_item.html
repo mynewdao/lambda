@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{item.brand}} {{item.model}}</title>
+</head>
+<body>
+{% for image in item.item_images.all %}
+<img src="{{image.image.url}}" alt="" height="200" width="300">
+{% endfor %}<br>
+{{item.brand}}<br>
+{{item.model}}<br>
+{{item.color}}<br>
+{{item.condition}}<br>
+{{item.price}}<br>
+{{item.description}}<br>
+
+</body>
+</html>
